@@ -16,7 +16,7 @@ Following is the workflow of this project:
 5. The Django view ("process/") will take these numbers, i.e., "a" and "b", add them, store the result in "c", and finally send them in a JsonResponse (from django.http import JsonResponse)
 6. AJAX call will get the value of addition, i.e., "c", in response and show its value on the same HTML page
   
-## Error:  
+## Error  
 An error was there, "Error 403, Forbidden". This error usually comes because of some issue with csrf_token.
   
 Although, the csrf_token was declared in the HTML page but still this error was coming.  
