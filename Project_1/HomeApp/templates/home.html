@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}"/>
+        <script type="text/javascript" src="{% static 'home.js' %}"></script>
+        <title>Home</title>
+    </head>
+    <body>
+        <h1>Home</h1>
+        <br><hr><br>
+        <!--<form method="post" action="process/" id="form_1">-->
+        <!--<div id="form_1">-->
+        <form method="post" action="" id="form_1">
+            {% csrf_token %}
+            Enter "a": <input type="text" name="text_a" id="text_a">
+            <br><br>
+            Enter "b": <input type="text" name="text_b" id="text_b">
+            <br><br>
+            <div id="div_result">
+                Sum is:
+            </div>
+            <br><br>
+            <!--<input type="submit" name="button_add" id="button_add" value="ADD">-->
+            <button type="button" name="button_add" id="button_add" onclick="function_sum()">ADD</button>
+        <!--</div>-->
+        </form>
+        <br><hr>
+    </body>
+</html>

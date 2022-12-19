@@ -1,0 +1,30 @@
+#form_1 {
+    margin-left: 110px;
+    font-size: 20px;
+    font-family: "courier, sans-serif";
+}
+
+#text_a {
+    font-family: "courier, sans-serif";
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+#text_b {
+    font-family: "courier, sans-serif";
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+#text_sum {
+    font-family: "courier, sans-serif";
+    font-size: 18px;
+    margin-left: 55px;
+}
+
+#button_add {
+    margin-left: 220px;
+    font-family: "courier, sans-serif";
+    font-size: 20px;
+}
+
