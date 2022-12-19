@@ -12,3 +12,14 @@ This project is making use of the following technologies:
 1. Django  
 2. JavaScript / AJAX / jQuery  
 3. CSS  
+  
+## CelerySample  
+This is a sample Celery/Django project.  
+  
+In this project, we will learn to offload the time-consuming tasks to an asynchronous process which will not hinder the responsiveness of the web application so that user don't feel like stuck.  
+  
+Following technologies have been used in this project:    
+1. Django  
+2. CSS  
+3. JavaScript / AJAX / jQuery  
+4. Celery [KEY ROLE]  
