@@ -1,16 +1,4 @@
-/*function function_sum() {
-    var a = parseInt(document.getElementById("text_a").value);
-    var b = parseInt(document.getElementById("text_b").value);
-    var sum = a + b;
-    document.getElementById("div_result").textContent = "Sum is: " + sum;
-    document.getElementById("text_a").value = "";
-    document.getElementById("text_b").value = "";
-}*/
-
 function function_sum() {
-    //var a = document.getElementById("text_a").value;
-    //var b = document.getElementById("text_b").value;
-    //alert(a + " - " + b);
     var a = $("#text_a").val();
     var b = $("#text_b").val();
     $.ajax({
