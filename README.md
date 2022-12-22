@@ -23,3 +23,13 @@ Following technologies have been used in this project:
 2. CSS  
 3. JavaScript / AJAX / jQuery  
 4. Celery [KEY ROLE]  
+  
+# CeleryRPCDemo  
+This is a sample Celery/Django project.  
+  
+In this project, we will learn to offload the time-consuming tasks to an asynchronous process which will not hinder the responsiveness of the web application so that user don't feel like stuck. Along with this, we will keep checking the status of the offloaded task in this project.  
+  
+Following technologies are the key focus in this project:  
+1. Django
+2. Celery
+3. RPC  
