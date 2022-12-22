@@ -87,6 +87,6 @@ def loop(self, l):
 ```  
 8. Run the command from the project root directory "/CeleryRPCDemo/":  
 `$ celery -A CeleryRPCDemo worker -l info`  
-9. In another tab (at the same path), copy the code in file "HomeApp/test.py" and paste after starting the python shell by the following command:  
+9. In another tab (at the same path), copy the code in file "/CeleryRPCDemo/test.py" and paste after starting the python shell by the following command:  
 `$ python manage.py shell`  
-After pasting the code copied from the file "HomeApp/test.py", you can see the output on both the terminal - python shell and celery worker terminal  
+After pasting the code copied from the file "/CeleryRPCDemo/test.py", you can see the output on both the terminal - python shell and celery worker terminal  
