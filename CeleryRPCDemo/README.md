@@ -8,7 +8,7 @@ Following technologies are the key focus in this project:
 2. Celery
 3. RPC  
   
-## How to run?  
+## Steps to build and run this project  
 Following are the steps to run this project:  
 1. First of all, start the rabbitmq-server by firing the following command:  
 `$ sudo systemctl start rabbitmq-server`  
