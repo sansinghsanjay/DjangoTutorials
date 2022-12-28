@@ -1,0 +1,20 @@
+body {
+    margin-left: 30px;
+}
+
+h1 {
+    margin-left: 45px;
+    font-family: monospace, monospace;
+}
+
+#div_websocket {
+    margin-left: 60px;
+    font-family: monospace, monospace;
+    font-size: 20px;
+}
+
+#button_startCommunication {
+    margin-left: 49%;
+    font-family: monospace, monospace;
+    font-size: 20px;
+}
