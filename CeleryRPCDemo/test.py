@@ -1,4 +1,5 @@
 import time
+from HomeApp.tasks import loop
 
 task = loop.delay(100)
 
