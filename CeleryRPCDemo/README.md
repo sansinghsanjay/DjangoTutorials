@@ -7,6 +7,8 @@ Following technologies are the key focus in this project:
 1. Django
 2. Celery
 3. RPC  
+4. HTML/CSS
+5. Javascript / jQuery / AJAX  
   
 ## Steps to build and run this project  
 Following are the steps to run this project:  

@@ -8,6 +8,7 @@ Following technologies have been used in this project:
 2. CSS
 3. JavaScript / AJAX / jQuery
 4. Celery [KEY ROLE]
+5. RabbitMQ [KEY ROLE]
   
 ## How to run?  
 Following are the steps to run this project:  
