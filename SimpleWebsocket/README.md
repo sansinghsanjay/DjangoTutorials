@@ -136,7 +136,7 @@ urlpatterns = [
     path("", homeView, name="home page"),
 ]
 ```  
-16. Create a file "consume.py" inside "SimpleWebsocket/HomeApp/" and paste the following code:  
+16. Create a file "consumers.py" inside "SimpleWebsocket/HomeApp/" and paste the following code:  
 ```commandline
 from channels.generic.websocket import WebsocketConsumer
 import json

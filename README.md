@@ -33,3 +33,10 @@ Following technologies are the key focus in this project:
 1. Django
 2. Celery
 3. RPC  
+  
+## SimpleWebsocket  
+This is a simple Djanog project to demonstrate the working of WebSockets in Django.  
+In this project, following is accomplished:  
+1. On clicking a HTML button, the javascript function will connect with the backend (a Django function) through a web-socket  
+2. This Django function will generate random numbers and send them at an interval of 1 second to the javascript function  
+3. The same javascript function will display that randomly generated number on the HTML page  
