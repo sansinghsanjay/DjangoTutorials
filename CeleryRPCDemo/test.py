@@ -1,7 +1,7 @@
 import time
 from HomeApp.tasks import loop
 
-task = loop.delay(100)
+task = loop.delay(25)
 
 print("ID of task: ", task.id)
 print("Is task is ready: ", task.ready())
