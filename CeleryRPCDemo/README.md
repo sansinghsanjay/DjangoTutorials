@@ -10,6 +10,9 @@ Following technologies are the key focus in this project:
 4. HTML/CSS
 5. Javascript / jQuery / AJAX  
   
+## Demo Video  
+[<img src="./readme_images/CeleryRPCDemo_thumbnail.png" width="50%">](https://youtu.be/gwYAosHHRUs "CeleryRPC Demo")  
+  
 ## Steps to build and run this project  
 Following are the steps to run this project:  
 1. First of all, start the rabbitmq-server by firing the following command:  
