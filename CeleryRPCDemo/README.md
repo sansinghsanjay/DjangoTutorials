@@ -11,6 +11,7 @@ Following technologies are the key focus in this project:
 5. Javascript / jQuery / AJAX  
   
 ## Demo Video  
+Click on the below thumbanil to play the YouTube video of its demo:  
 [![IMAGE_ALT](./readme_images/CeleryRPCDemo_YouTubeThumbnail.jpg)](https://youtu.be/gwYAosHHRUs "CeleryRPC Demo")  
   
 ## Steps to build and run this project  
