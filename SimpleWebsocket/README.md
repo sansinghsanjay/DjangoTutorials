@@ -174,11 +174,7 @@ function startCommunication() {
     }
 }
 ```  
-19. Now, navigate to the root of this project, i.e., "SimpleWebsocket/" and run the following command:  
-`$ python manage.py runserver`  
-Now, you should open http://localhost:8000/ in a browser and see the following:  
-![alt Home Screen](./readme_images/home_page.png "Home Page")  
-20. Open "SimpleWebsocket/SimpleWebsocket/asgi.py" and paste the following code:  
+19. Open "SimpleWebsocket/SimpleWebsocket/asgi.py" and paste the following code:  
 ```commandline
 """
 ASGI config for realtime_pr project.
@@ -204,5 +200,9 @@ application = ProtocolTypeRouter({
     'websocket': AuthMiddlewareStack(URLRouter(ws_urlpatterns)),
 })
 ```  
+20. Now, navigate to the root of this project, i.e., "SimpleWebsocket/" and run the following command:  
+`$ python manage.py runserver`  
+Now, you should open http://localhost:8000/ in a browser and see the following:  
+![alt Home Screen](./readme_images/home_page.png "Home Page")  
 21. Now, click on the button "START" and you should see random numbers (in the range 0 to 100) printing on the webpage after an interval of 1 second:  
 ![alt websocket communication in action](./readme_images/home_page_websocket_communication.png "Websocket communication in action")  
