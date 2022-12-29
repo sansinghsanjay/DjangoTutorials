@@ -5,6 +5,10 @@ In this project, following is accomplished:
 2. This Django function will generate random numbers and send them at an interval of 1 second to the javascript function  
 3. The same javascript function will display that randomly generated number on the HTML page  
   
+## Demo Video
+Click on the following thumbnail to play its YouTube demo video:  
+[![IMAGE_ALT](./readme_images/SimpleWebsocket_Demo_YouTubeThumbnail.jpg)](https://youtu.be/7lF-qciUkaY "SimpleWebsocket Demo")  
+  
 ## WebSocket  
 HTTP (HyperText Transfer Protocol) and WebSocket, are the two communication protocols used in client-server communication.  
   
