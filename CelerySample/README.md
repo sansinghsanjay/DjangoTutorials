@@ -8,7 +8,11 @@ Following technologies have been used in this project:
 2. CSS
 3. JavaScript / AJAX / jQuery
 4. Celery [KEY ROLE]
-5. RabbitMQ [KEY ROLE]
+5. RabbitMQ [KEY ROLE]  
+  
+## Demo Video  
+Please click on the below YouTube thumbnail to watch the demo video of this project:  
+[![IMAGE_ALT](./readme_images/CelerySample_Demo_YouTubeThumbnail.jpg)](https://youtu.be/26nLnFndmvk "CelerySample Demo")  
   
 ## How to run?  
 Following are the steps to run this project:  
