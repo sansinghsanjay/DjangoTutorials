@@ -259,6 +259,10 @@ class WSConsumer(WebsocketConsumer):
 And the following command in another terminal:  
 `$ python manage.py runserver`  
 Open a browser and hit "localhost:8000", the app should work there as shown in the demo video above.  
+18. Following are some points to take care of:
+    1. The name of Celery tasks file must be "tasks.py"
+    2. Install "channels" Python package. It is required for WebSocket communication. Its version must be "3.0.4" for Django version ">=4.0.0"
+    3. When every you make any changes related to Celery, such as "HomeApp/tasks.py", etc., then re-run the `$ celery -A CeleryProgressbar worker -l info` command.  
   
 ## Role of Celery  
 ## Role of RPC  
