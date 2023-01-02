@@ -40,3 +40,14 @@ In this project, following is accomplished:
 1. On clicking a HTML button, the javascript function will connect with the backend (a Django function) through a web-socket  
 2. This Django function will generate random numbers and send them at an interval of 1 second to the javascript function  
 3. The same javascript function will display that randomly generated number on the HTML page  
+  
+## CeleryProgressbar  
+This project is updating a progress bar to show the progress of a background running task.  
+The background running task is simulating a high computational task. This task is made to run in background by using Celery.  
+  
+Following is the execution flow of this project:  
+1. Click on the "START" button
+2. This will connect the front-end (i.e., javascript) with a web-socket (Django at backend)
+3. This web-socket code (Django at backend) will accept the connection request and initiate a Celery task (in Python), i.e., in background
+4. This web-socket (Django at backend) will get the progress made by the Celery task (Python code) and send it to the connected front-end (javascript)
+5. The front-end (javascript) will update the progress-bar and its value (i.e., HTML page)  
