@@ -1,0 +1,28 @@
+body {
+    margin-left: 30px;
+    font-family: monospace, monopsace;
+    font-size: 20px;
+}
+
+h1 {
+    margin-left: 45px;
+    font-family: monospace, monospace;
+}
+
+#div_progress_val {
+    margin-left: 60px;
+    font-family: monospace, monospace;
+    font-size: 20px;
+}
+
+#progress_bar {
+    margin-left: 12%;
+    width: 75%;
+    height: 30px;
+}
+
+#button_startAction {
+    margin-left: 47%;
+    font-family: monospace, monospace;
+    font-size: 22px;
+}
