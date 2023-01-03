@@ -138,7 +138,7 @@ from channels.auth import AuthMiddlewareStack
 from channels.routing import URLRouter
 from HomeApp.routing import ws_urlpatterns
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SimpleWebsocket.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CeleryProgressbar.settings')
 
 application = ProtocolTypeRouter({
     'http': get_asgi_application(),
