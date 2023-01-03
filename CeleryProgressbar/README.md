@@ -109,7 +109,7 @@ WSGI_APPLICATION = 'CeleryProgressbar.wsgi.application'
 ASGI_APPLICATION = 'CeleryProgressbar.asgi.application'
 ```  
 Thie above lines will help in WebSocket communication.  
-9. In "HomeApp/urls.py" file, paste the below code:  
+9. In "CeleryProgressbar/urls.py" file, paste the below code:  
 ```commandline
 from django.contrib import admin
 from django.urls import path, include
