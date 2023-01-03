@@ -119,7 +119,7 @@ urlpatterns = [
     path("", include("HomeApp.urls")),
 ]
 ```  
-10. Open "HomeApp/asgi.py" and paste the following code:  
+10. Open "CeleryProgressbar/asgi.py" and paste the following code:  
 ```commandline
 """
 ASGI config for realtime_pr project.
