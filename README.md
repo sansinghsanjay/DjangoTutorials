@@ -51,3 +51,20 @@ Following is the execution flow of this project:
 3. This web-socket code (Django at backend) will accept the connection request and initiate a Celery task (in Python), i.e., in background
 4. This web-socket (Django at backend) will get the progress made by the Celery task (Python code) and send it to the connected front-end (javascript)
 5. The front-end (javascript) will update the progress-bar and its value (i.e., HTML page)  
+  
+## CeleryIndeterminateProgressbar  
+This project is updating an indeterminate progress bar to show the progress of a background running task whose progress cannot be determined.  
+The background running task is simulating a high computational task. This task is made to run in background by using Celery.  
+  
+Following is the execution flow of this project:  
+1. Click on the "START" button
+2. This will connect the front-end (i.e., javascript) with a web-socket (Django at backend)
+3. This web-socket code (Django at backend) will accept the connection request and initiate a Celery task (in Python), i.e., in background
+4. This web-socket (Django at backend) will send a signal to the front-end (i.e., javascript) that the background task has started. The front-end (i.e., javascript) script will update the same on the interface by showing status as "Started" and start the indeterminate progress bar  
+  
+Following are the technologies used to develop this project:  
+1. HTML / CSS
+2. JavaScript / jQuery
+3. Django
+4. Celery
+5. WebSocket
