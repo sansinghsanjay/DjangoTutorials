@@ -29,12 +29,27 @@ Following are the steps to build and run this project:
 `$ python manage.py migrate`  
 `$ python manage.py runserver`  
 Open a browser and hit "localhost:8000", you should see the default Django server page  
-3. Create an app, HomeApp, by running the following command:  
+3. Create a file "CeleryProgressbar/celery.py" and paste the following code in it:  
+```commandline
+# packages
+import os
+from celery import Celery
+
+# set default environment
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CeleryProgressbar.settings')
+# create celery instance with a name
+app = Celery('CeleryProgressbar')
+# celery configurations
+app.config_from_object('django.conf:settings', namespace="CELERY")
+# celery - discover tasks
+app.autodiscover_tasks()
+```  
+4. Create an app, HomeApp, by running the following command:  
 `$ python manage.py startapp HomeApp`  
-4. Create the following directories:  
+5. Create the following directories:  
    1. "HomeApp/templates/"   
    2. "HomeApp/static/"  
-5. Create a file "HomeApp/templates/home.html" and paste the following code in it:  
+6. Create a file "HomeApp/templates/home.html" and paste the following code in it:  
 ```commandline
 <!DOCTYPE html>
 <html>
@@ -59,7 +74,7 @@ Open a browser and hit "localhost:8000", you should see the default Django serve
     </body>
 </html>
 ```  
-6. Create a file "HomeApp/static/home.css" and paste the following code in it:  
+7. Create a file "HomeApp/static/home.css" and paste the following code in it:  
 ```commandline
 body {
     margin-left: 30px;
@@ -90,7 +105,7 @@ h1 {
     font-size: 22px;
 }
 ```  
-7. Paste the following code at the bottom of the file "CeleryProgressbar/settings.py":  
+8. Paste the following code at the bottom of the file "CeleryProgressbar/settings.py":  
 ```commandline
 #################################################################################
 # CELERY SETTINGS
@@ -99,7 +114,7 @@ CELERY_BROKER_URL = 'amqp://localhost'
 CELERY_RESULT_BACKEND = 'rpc://localhost'
 ```  
 This is for Celery.  
-8. In "CeleryProgressbar/settings.py", copy the following line:  
+9. In "CeleryProgressbar/settings.py", copy the following line:  
 `WSGI_APPLICATION = 'CeleryProgressbar.wsgi.application'`  
 In the above line, change "wsgi" to "asgi". After this change, the new line will look like:  
 `ASGI_APPLICATION = 'CeleryProgressbar.asgi.application'`  
@@ -109,7 +124,7 @@ WSGI_APPLICATION = 'CeleryProgressbar.wsgi.application'
 ASGI_APPLICATION = 'CeleryProgressbar.asgi.application'
 ```  
 Thie above lines will help in WebSocket communication.  
-9. In "CeleryProgressbar/urls.py" file, paste the below code:  
+10. In "CeleryProgressbar/urls.py" file, paste the below code:  
 ```commandline
 from django.contrib import admin
 from django.urls import path, include
@@ -119,7 +134,7 @@ urlpatterns = [
     path("", include("HomeApp.urls")),
 ]
 ```  
-10. Open "CeleryProgressbar/asgi.py" and paste the following code:  
+11. Open "CeleryProgressbar/asgi.py" and paste the following code:  
 ```commandline
 """
 ASGI config for realtime_pr project.
@@ -146,7 +161,7 @@ application = ProtocolTypeRouter({
 })
 ```  
 The above code will help in WebSocket communication.  
-11. Create "HomeApp/static/home.js" and paste the following code:  
+12. Create "HomeApp/static/home.js" and paste the following code:  
 ```commandline
 // function to execute on click of "button_startAction"
 function startAction() {
@@ -165,7 +180,7 @@ function startAction() {
     }
 }
 ```  
-12. Open "HomeApp/views.py" and paste the following code:  
+13. Open "HomeApp/views.py" and paste the following code:  
 ```commandline
 # packages
 from django.shortcuts import render
@@ -174,7 +189,7 @@ from django.shortcuts import render
 def homeView(request):
     return render(request, "home.html")
 ```  
-13. Create "HomeApp/urls.py" and paste the following code:  
+14. Create "HomeApp/urls.py" and paste the following code:  
 ```commandline
 # packages
 from django.urls import path
@@ -184,7 +199,7 @@ urlpatterns = [
     path("", homeView, name="home page"),
 ]
 ```  
-14. Create "HomeApp/routing.py" file and paste the following code:  
+15. Create "HomeApp/routing.py" file and paste the following code:  
 ```commandline
 from django.urls import path
 from .consumers import WSConsumer
@@ -193,7 +208,7 @@ ws_urlpatterns = [
     path('ws/some_url/', WSConsumer.as_asgi())
 ]
 ```  
-15. Create "HomeApp/tasks.py" file and paste the following code:  
+16. Create "HomeApp/tasks.py" file and paste the following code:  
 ```commandline
 # packages
 from CeleryProgressbar.celery import app
@@ -231,7 +246,7 @@ def gen_random(self):
     time.sleep(3)
     return 1
 ```  
-16. Create "HomeApp/consumers.py" file and paste the following code:  
+17. Create "HomeApp/consumers.py" file and paste the following code:  
 ```commandline
 from channels.generic.websocket import WebsocketConsumer
 import json
@@ -254,12 +269,12 @@ class WSConsumer(WebsocketConsumer):
             self.send(json_message)
             time.sleep(1)
 ```  
-17. Run the following command in one terminal:  
+18. Run the following command in one terminal:  
 `$ celery -A CeleryProgressbar worker -l info`  
 And the following command in another terminal:  
 `$ python manage.py runserver`  
 Open a browser and hit "localhost:8000", the app should work there as shown in the demo video above.  
-18. Following are some points to take care of:
+19. Following are some points to take care of:
     1. The name of Celery tasks file must be "tasks.py"
     2. Install "channels" Python package. It is required for WebSocket communication. Its version must be "3.0.4" for Django version ">=4.0.0"
     3. When every you make any changes related to Celery, such as "HomeApp/tasks.py", etc., then re-run the `$ celery -A CeleryProgressbar worker -l info` command.  
