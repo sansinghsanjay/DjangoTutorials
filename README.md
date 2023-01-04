@@ -68,3 +68,6 @@ Following are the technologies used to develop this project:
 3. Django
 4. Celery
 5. WebSocket
+  
+## ProjectVGG16  
+Coming soon...  
