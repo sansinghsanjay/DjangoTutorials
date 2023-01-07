@@ -7,6 +7,7 @@ Following are the technologies used in this project:
 3. Django  
   
 ## Demo Video  
+Click on the below YouTube thumbnail to play the video:  
 [![IMAGE_ALT](./readme_images/ImageUpload_YouTube_video_thumbnail.jpg)](https://youtu.be/bTREjQEid9g "ImageUpload Demo")  
   
 ## Steps to Build & Run  
