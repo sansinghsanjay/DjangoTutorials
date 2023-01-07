@@ -7,6 +7,7 @@ Following are the technologies used in this project:
 3. Django  
   
 ## Demo Video  
+[![IMAGE_ALT](./readme_images/CelerySample_Demo_YouTubeThumbnail.jpg)](https://youtu.be/26nLnFndmvk "ImageUpload Demo")  
   
 ## Steps to Build & Run  
 Following are the steps to build and run this project:  

@@ -73,4 +73,10 @@ Following are the technologies used to develop this project:
 Coming soon...  
   
 ## ImageUpload  
-Coming soon...  
+This project is demonstrating the upload of image files. The progress of upload is shown by a progress bar.  
+  
+Following are the technologies used in this project:  
+1. HTML / CSS  
+2. JavaScript / jQuery / AJAX  
+3. Django  
+  
