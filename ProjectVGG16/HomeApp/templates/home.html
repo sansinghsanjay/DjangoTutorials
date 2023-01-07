@@ -9,13 +9,19 @@
     </head>
     <body>
         <h1>Home</h1>
-        <br><hr><br>
         <div id="div_image_area">
             Your images will come here
         </div>
+        <br>
+        <div id="div_upload_status">
+            Uploading...
+        </div>
+        <div id="div_image_processing">
+            Processing...
+        </div>
+        <progress id="progress_bar" value="0" max="100"></progress>
         <br><br>
         <button type="button" name="button_reset" id="button_reset" onclick="location.href='/'">RESET</button>
         <button type="button" name="button_browse" id="button_browse" onclick="button_browse()">BROWSE</button>
-        <br><hr>
     </body>
 </html>

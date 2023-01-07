@@ -39,6 +39,25 @@ body {
     text-align: center;
 }
 
+#div_upload_status {
+    margin-left: 18%;
+    font-family: monospace, monospace;
+    font-size: 18px;
+    color: silver;
+}
+
+#div_image_processing {
+    margin-left: 18%;
+    font-family: monospace, monospace;
+    font-size: 18px;
+    color: silver;
+}
+
+#progress_bar {
+    margin-left: 30%;
+    width: 40%;
+}
+
 #button_reset {
     margin-left: 30px;
     font-family: monospace, monospace;
