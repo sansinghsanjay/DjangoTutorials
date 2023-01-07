@@ -20,6 +20,6 @@ def uploadProcessView(request):
     image_file.close()
     # make a dictionary with a status value
     result_dict = {
-        'result': "Success"
+        'result': "Success",
     }
     return JsonResponse(result_dict)

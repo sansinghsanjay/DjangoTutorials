@@ -20,3 +20,11 @@ h1 {
     font-family: monospace, monospace;
     font-size: 24px;
 }
+
+#div_progress_bar {
+    margin-left: 35%;
+}
+
+#progress_bar {
+    width: 50%;
+}

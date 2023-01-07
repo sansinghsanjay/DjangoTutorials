@@ -12,10 +12,14 @@
         <br><hr><br>
         <form method="POST" action="" id="form_v0">
             {% csrf_token %}
-            Select an image file: <button type="button" id="button_selectSubmit" name="button_selectSubmit" onclick="selectSubmit()">SELECT & SUBMIT</button>
+            Select an image file: <button type="button" id="button_selectSubmit" name="button_selectSubmit" onclick="selectSubmit()">SELECT & SUBMIT</button> (max. 15)
             <br><br><hr>
             <div id="div_server_response">
                 Awaiting response from server
+            </div>
+            <br>
+            <div id="div_progress_bar">
+                <progress id="progress_bar" value="0" max="100"></progress>
             </div>
         </form>
         <br><hr>
