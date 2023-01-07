@@ -7,7 +7,7 @@ Following are the technologies used in this project:
 3. Django  
   
 ## Demo Video  
-[![IMAGE_ALT](./readme_images/CelerySample_Demo_YouTubeThumbnail.jpg)](https://youtu.be/26nLnFndmvk "ImageUpload Demo")  
+[![IMAGE_ALT](./readme_images/ImageUpload_YouTube_video_thumbnail.jpg)](https://youtu.be/bTREjQEid9g "ImageUpload Demo")  
   
 ## Steps to Build & Run  
 Following are the steps to build and run this project:  
@@ -256,4 +256,6 @@ urlpatterns = [
 10. Run the following code to run this project:  
 `$ python manage.py runserver`  
 After firing the above command, hit "localhost:8000" in a browser.  
-
+On the browser, right click > select "Inspect (Q)" > select "Network" on top bar > open the drop-down at top-right corner with label "No Throttling" and change it to either "Good 2G" or "Regular 2G". This step is required to see the progressing progress bar on each image upload.  
+Please don't forget to delete the uploaded images from "HomeApp/received_data/" directory. This will unnecessary take up the memory.  
+  
