@@ -70,7 +70,22 @@ Following are the technologies used to develop this project:
 5. WebSocket
   
 ## ProjectVGG16  
-Coming soon...  
+# ProjectVGG16  
+This project is just to demonstrate the use of VGG16 model at the backend of a Django app.  
+In this project, a VGG16 model is deployed that will process the passed images from the front-end and make predictions. Then, the Django back-end will share those predictions with the front-end which will show them to the user.  
+Following is the execution flow:  
+1. Use will upload a number of images by clicking on a "Browse" button.  
+2. Once those images are selected, the next page will show those images just for the user confirmation. The user will confirm the uploaded images by clicking on a "Submit" button at the bottom of this page.  
+3. As the user clicks on the "Submit" button, the from-end will pass those images to the Django back-end.  
+4. This Django back-end will process the passed images, i.e., resizing; and then pass them to the VGG16 model. This model will make predictions by processing these images.  
+5. After the VGG16 model generate predictions, the Django backend will send those predictions to the front-end to present the result to the user.  
+  
+Following are the technologies used in this project:  
+1. Django  
+2. HTML / CSS  
+3. JavaScript / jQuery / AJAX  
+4. Celery  
+5. WebSocket  
   
 ## ImageUpload  
 This project is demonstrating the upload of image files. The progress of upload is shown by a progress bar.  
