@@ -70,7 +70,6 @@ Following are the technologies used to develop this project:
 5. WebSocket
   
 ## ProjectVGG16  
-# ProjectVGG16  
 This project is just to demonstrate the use of VGG16 model at the backend of a Django app.  
 In this project, a VGG16 model is deployed that will process the passed images from the front-end and make predictions. Then, the Django back-end will share those predictions with the front-end which will show them to the user.  
 Following is the execution flow:  
