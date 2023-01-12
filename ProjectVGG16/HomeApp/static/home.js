@@ -13,8 +13,10 @@ function button_browse() {
         $("#div_image_area").html("");
         // set the images
         for(let i=0; i<files.length; i++) {
+            let id = files[i].name;
+            id = id.replace(".", "_");
             $("#div_image_area").append(
-                "<div class='div_image' id='div_image_'" + i + "><img class='div_image_tag' src='" + URL.createObjectURL(files[i]) + "'/><input type='text' readonly value='Predicted Label' class='div_image_text' id='div_image_text_'" + i + "></div>"
+                "<div class='div_image' id='div_" + id + "_img'><img class='div_image_tag' src='" + URL.createObjectURL(files[i]) + "'/><input type='text' readonly value='Predicted Label' class='div_image_text' id='div_" + id + "_text'></div>"
             );
         }
         // change the label of this button
@@ -136,6 +138,10 @@ function imageProcessing() {
         type: "POST",
         url: "process/",
         success: function(result) {
+            // iterate over the results received and set the predictions in the respective textfields
+            $.each(result, function(k, v){
+                $("#" + k).val(v);
+            });
             // update the status and change the font color
             $("#div_image_processing").html("Processing done");
             $("#div_image_processing").css("color", "green");

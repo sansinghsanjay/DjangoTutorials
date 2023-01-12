@@ -16,6 +16,7 @@ Following are the technologies used in this project:
 5. WebSocket  
   
 ## Steps to build this project  
+> **_NOTE:_** Please get the model weights by running the script "./misc_scripts/download_save_vgg16_weights.py" in this repository. Place the stored weights at a safe location and update its path in the variable "weights_path" defined in file "./HomeApp/views.py".  
 1. Create the Django project, migrate the initial changes and check the working of default server:  
 `$ django-admin startproject ProjectVGG16`  
 `$ cd ProjectVGG16`  
