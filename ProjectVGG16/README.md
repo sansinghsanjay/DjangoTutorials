@@ -15,6 +15,10 @@ Following are the technologies used in this project:
 4. Celery  
 5. WebSocket  
   
+## Demo Video  
+Click on the below YouTube thumbnail to play the video:  
+[![IMAGE_ALT](./readme_images/ProjectVGG16_YouTube_video_thumbnail.jpg)](https://youtu.be/tPBiO1z6i3c "ProjectVGG16 Demo")  
+  
 ## Steps to build this project  
 > **_NOTE:_** Please get the model weights by running the script `./misc_scripts/download_save_vgg16_weights.py` in this repository. Place the stored weights at a safe location and update its path in the variable `weights_path` defined in file `./HomeApp/views.py`.  
 1. Create the Django project, migrate the initial changes and check the working of default server:  
