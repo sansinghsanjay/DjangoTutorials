@@ -1,0 +1,84 @@
+h1 {
+    margin-left: 2%;
+    font-family: monospace, monospace;
+}
+
+body {
+    margin-left: 2%;
+    margin-right: 2%;
+    font-family: monospace, monospace;
+    font-size: 20px;
+}
+
+#div_signup {
+    margin-left: 15%;
+}
+
+#text_firstName {
+    margin-left: 10%;
+    font-family: monospace, monospace;
+    font-size: 18px;
+    width: 30%;
+}
+
+#text_lastName {
+    margin-left: 11%;
+    font-family: monospace, monospace;
+    font-size: 18px;
+    width: 30%;
+}
+
+#radio_genderMale {
+    margin-left: 14%;
+}
+
+#radio_genderFemale {
+    margin-left: 8%;
+}
+
+#radio_genderTransgender {
+    margin-left: 22%;
+}
+
+#radio_genderNoResponse {
+    margin-left: 1%;
+}
+
+#date_dob {
+    margin-left: 7%;
+    font-family: monospace, monospace;
+    font-size: 18px;
+    width: 30%;
+}
+
+#text_emailID {
+    margin-left: 12%;
+    font-family: monospace, monospace;
+    font-size: 18px;
+    width: 30%;
+}
+
+#text_contactNo {
+    margin-left: 6%;
+    font-family: monospace, monospace;
+    font-size: 18px;
+    width: 30%;
+}
+
+#password_pwd {
+    margin-left: 12%;
+    font-size: 18px;
+    width: 30%;
+}
+
+#password_retypePwd {
+    margin-left: 4%;
+    font-size: 18px;
+    width: 30%;
+}
+
+#button_signup {
+    margin-left: 35%;
+    font-family: monospace, monospace;
+    font-size: 24px;
+}

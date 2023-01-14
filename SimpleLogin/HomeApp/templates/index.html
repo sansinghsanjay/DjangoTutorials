@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+        <script type="text/javascript" src="{% static 'index.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <title>Index</title>
+    </head>
+    <body>
+        <h1>Index</h1>
+        <button type="button" name="button_signup" id="button_signup" onclick="fun_signup()">SIGN UP</button>
+        <button type="button" name="button_signin" id="button_signin" onclick="fun_signin()">SIGN IN</button>
+    </body>
+</html>

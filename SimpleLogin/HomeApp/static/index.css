@@ -1,0 +1,26 @@
+h1 {
+    margin-left: 43%;
+    font-family: monospace, monospace;
+    font-size: 64px;
+}
+
+body {
+    margin-left: 2%;
+    margin-right: 2%;
+    font-family: monospace, monospace;
+    font-size: 20px;
+}
+
+#button_signup {
+    margin-left: 20%;
+    margin-top: 12%;
+    font-family: monospace, monospace;
+    font-size: 48px;
+}
+
+#button_signin {
+    margin-left: 30%;
+    margin-top: 12%;
+    font-family: monospace, monospace;
+    font-size: 48px;
+}
