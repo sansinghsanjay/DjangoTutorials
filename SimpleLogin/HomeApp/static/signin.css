@@ -1,0 +1,35 @@
+h1 {
+    margin-left: 2%;
+    font-family: monospace, monospace;
+}
+
+body {
+    margin-left: 2%;
+    margin-right: 2%;
+    font-family: monospace, monospace;
+    font-size: 20px;
+}
+
+#div_signin {
+    margin-left: 30%;
+    margin-top: 9%;
+}
+
+#text_emailId {
+    margin-left: 10%;
+    font-family: monospace, monospace;
+    font-size: 18px;
+    width: 30%;
+}
+
+#password_pwd {
+    margin-left: 10%;
+    font-size: 18px;
+    width: 30%;
+}
+
+#button_signin {
+    margin-left: 22.5%;
+    font-family: monospace, monospace;
+    font-size: 24px;
+}

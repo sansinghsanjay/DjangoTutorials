@@ -47,12 +47,16 @@ function fun_signup() {
             type: "POST",
             url: "process_signup",
             data: formData,
-            success: function() {
-                alert("Form data saved successfully");
-                window.location = "/";
+            success: function(response) {
+                if(response['result'] == "successful") {
+                    alert("Successfully sign-up. Now, sign-in in your account. Welcome!");
+                    window.location = "/";
+                } else {
+                    alert("Sign-up failed. Please try again...");
+                }
             },
             error: function() {
-                alert("Error occurred");
+                alert("Error occurred at the backedn. Unable to complete the request.");
             }
         });
     }

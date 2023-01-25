@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'signin.css' %}">
+        <script type="text/javascript" src="{% static 'signin.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <title>Sign In</title>
+    </head>
+    <body>
+        <h1>Sign In</h1>
+        <br>
+        <div id="div_signin">
+            Email ID: <input type="text" name="text_emailId" id="text_emailId" placeholder="Email ID">
+            <br><br><br>
+            Password: <input type="password" name="password_pwd" id="password_pwd">
+            <br><br><br>
+            <button type="button" name="button_signin" id="button_signin" onclick="fun_signin()">SIGN IN</button>
+        </div>
+    </body>
+</html>

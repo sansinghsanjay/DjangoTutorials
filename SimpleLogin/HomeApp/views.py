@@ -31,13 +31,6 @@ def signupProcess(request):
     retype_pwd = request.POST.get("retype_pwd")
     # check if retype_pwd matches pwd
     if(retype_pwd == pwd):
-        # print all
-        print(firstName + " " + lastName)
-        print(gender)
-        print(dob)
-        print(emailId)
-        print(contactNo)
-        print(pwd)
         # connect with the postgresql database
         conn = psycopg2.connect(
             host="localhost",
@@ -45,11 +38,8 @@ def signupProcess(request):
             user="master",
             password="master",
         )
-        print(">> Connection: ", conn)
         # create a database cursor
         cur = conn.cursor()
-        cur.execute("select version()")
-        print(">> DB version: ", cur.fetchone())
         # insert data
         cur.execute(
             "insert into table_user_login (first_name, last_name, gender, dob, email_id, contact_no, pwd) values ('" + firstName + "', '" + lastName + "', '" + gender[0] + "', '" + dob + "', '" + emailId + "', '" + contactNo + "', '" + pwd + "')"
@@ -70,3 +60,47 @@ def signupProcess(request):
             "result": "failed"
         }
     return JsonResponse(json_response)
+
+def signinView(request):
+    return render(request, "signin.html")
+
+@csrf_exempt
+def signinProcess(request):
+    # get email id
+    email_id = request.POST.get("emailId")
+    # get password
+    input_pwd = request.POST.get("pwd")
+    # connect with the postgresql database
+    conn = psycopg2.connect(
+        host="localhost",
+        database="simplelogindb",
+        user="master",
+        password="master",
+    )
+    # create a database cursor
+    cur = conn.cursor()
+    # insert data
+    cur.execute(
+        "select pwd from table_user_login where email_id='" + email_id + "'"
+    )
+    # get the result
+    stored_pwd = cur.fetchone()[0]
+    # close cursor and connection
+    cur.close()
+    conn.close()
+    # check if password matches
+    if(input_pwd == stored_pwd):
+        # response
+        json_response = {
+            "result": "successful",
+        }
+    else:
+        # response
+        json_response = {
+            "result": "failed",
+        }
+    return JsonResponse(json_response)
+
+@csrf_exempt
+def homeView(request):
+    return render(request, "home.html")
