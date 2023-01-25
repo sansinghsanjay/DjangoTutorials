@@ -1,5 +1,5 @@
 function fun_signup() {
-    window.location.href = "signup/"
+    window.location.href = "signup"
 }
 
 function fun_signin() {
