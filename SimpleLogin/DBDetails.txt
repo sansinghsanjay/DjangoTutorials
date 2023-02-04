@@ -1,0 +1,6 @@
+DB Name: simplelogindb
+User Name: master
+User Password: master
+Table Name: table_user_login
+
+1. create table table_user_login (first_name varchar(30), last_name varchar(30), gender char(1), dob char(10), email_id varchar(60) primary key, contact_no char(10), pwd varchar(16));

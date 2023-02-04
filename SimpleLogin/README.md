@@ -7,9 +7,15 @@ Following are the commands to install PostgreSQL database:
 $ sudo apt-get update  
 $ sudo apt-get install postgresql postgresql-contrib  
 ```  
-Following is the command to check the status of postgresql server:  
+Following is the command to check the status of postgresql server (in Ubuntu-20):  
 ```commandline
 $ sudo systemctl status postgresql
+```  
+In case, you want to run postgresql in WSL Ubuntu-20 on Windows OS, then run the following commands in WSL Ubuntu terminal:  
+```commandline
+$ sudo /etc/init.d/postgresql status # to check the status of the server
+$ sudo /etc/init.d/postgresql start # to start the server
+$ sudo /etc/init.d/postgresql stop # to stop the server
 ```  
 Following is the command to start the postgresql server:  
 ```commandline
@@ -40,24 +46,28 @@ Command to list all users (run it inside psql):
 ```commandline
 $ \du
 ```  
-Modify the file pg_hba.conf by running the following commands:  
+If you get error `psql: error: FATAL:  Peer authentication failed for user 'master'` while login with the newly created user 'master', then modify the file pg_hba.conf by running the following commands:  
 ```commandline
 $ sudo vim /etc/postgresql/12/main/pg_hba.conf
 ```  
-In the above file, find the line with values (local, all, postgres, peer) under the line "# Database administrative login by unix domain socket" and change the value "peer" to "md5":  
+In the above file, find the line with values (local, all, postgres, peer) under the line `# "local" is for Unix domain socket connections only` and change the value "peer" to "md5":  
 Earlier:  
 ```commandline
-# Database administrative login by Unix domain socket  
-local   all      postgres                        peer
+# "local" is for Unix domain socket connections only  
+local   all      local                        peer
 ```  
 After change:  
 ```commandline
-# Database administrative login by Unix domain socket
-local   all      postgres                        md5
+# "local" is for Unix domain socket connections only  
+local   all      local                        md5
 ```  
 Restart the postgresql server:  
 ```commandline
 $ sudo service postgresql restart
+```  
+OR
+```commandline
+$ sudo /etc/init.d/postgres restart
 ```  
 Run the following command to login in the database with the newly created user:  
 ```commandline
