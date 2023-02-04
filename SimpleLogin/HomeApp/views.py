@@ -103,4 +103,34 @@ def signinProcess(request):
 
 @csrf_exempt
 def homeView(request):
-    return render(request, "home.html")
+    # get email ID
+    emailId = request.POST.get("emailId")
+    # get password
+    pwd = request.POST.get("pwd")
+    # print details
+    print(">> Email Id: ", emailId)
+    print(">> Password: ", pwd)
+    # get first name of user
+    # connect with the postgresql database
+    conn = psycopg2.connect(
+        host="localhost",
+        database="simplelogindb",
+        user="master",
+        password="master",
+    )
+    # create a database cursor
+    cur = conn.cursor()
+    # insert data
+    cur.execute(
+        "select first_name from table_user_login where email_id='" + emailId + "'"
+    )
+    first_name = cur.fetchall()[0][0]
+    # close cursor and connection
+    cur.close()
+    conn.close()
+    # create session
+    request.session.create()
+    request.session['emailId'] = emailId
+    request.session['pwd'] = pwd
+    session_key = request.session.session_key
+    return render(request, "home.html", {'first_name': first_name, 'session_key': session_key})
