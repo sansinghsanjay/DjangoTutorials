@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import psycopg2
+from datetime import datetime
 
 # Create your views here.
 def indexView(request):
@@ -127,18 +128,24 @@ def homeView(request):
         # close cursor and connection
         cur.close()
         conn.close()
-        # create session
+        # create session and get session key
         request.session.create()
-        request.session.set_expiry(600)
-        request.session['emailId'] = emailId
-        request.session['pwd'] = pwd
-        session_key = request.session.session_key
+        # set session expiry time (in seconds)
+        request.session.set_expiry(300)
+        # set session key parameters
+        request.session['firstName'] = first_name
+        # get current datetime
+        now = datetime.now()
+        now = now.strftime("%Y-%m-%d %H:%M:%S")
     else:
-        # debugging
-        session_key = request.session.session_key
-        first_name = request.session['emailId']
-    return render(request, "home.html", {'first_name': first_name, 'session_key': session_key})
+        # get sessionkey and firstname
+        first_name = request.session['firstName']
+        # get current datetime
+        now = datetime.now()
+        now = now.strftime("%Y-%m-%d %H:%M:%S")
+    return render(request, "home.html", {'first_name': first_name, 'datetime_now': now})
 
 def logoutView(request):
-    request.session.delete()
+    # delete session
+    del request.session['firstName']
     return render(request, "logout.html")
