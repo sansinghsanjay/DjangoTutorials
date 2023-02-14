@@ -1,0 +1,17 @@
+h1 {
+    margin-left: 2%;
+    font-family: monospace, monospace;
+}
+
+body {
+    margin-left: 2%;
+    margin-right: 2%;
+    font-family: monospace, monospace;
+    font-size: 20px;
+}
+
+a {
+    margin-left: 5%;
+    font-family: monospace, monospace;
+    font-size: 20px;
+}
