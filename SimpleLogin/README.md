@@ -1,5 +1,6 @@
 # SimpleLogin  
-Introduction of this project  
+This project is demonstrating signup and signin functionality. 
+For the same Postgresql database is used.  
   
 ## PostgreSQL Database  
 Following are the commands to install PostgreSQL database:  

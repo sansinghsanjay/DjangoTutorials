@@ -94,3 +94,19 @@ Following are the technologies used in this project:
 2. JavaScript / jQuery / AJAX  
 3. Django  
   
+## SimpleLogin  
+This project is demonstrating signup and signin functionality. 
+For the same Postgresql database is used.  
+  
+## ci_cd-pipeline  
+This project is just to learn CI/CD (Continuous Integration/Continuous Delivery) by using GitHub Actions and AWS.  
+  
+Following are the technologies used in this project:  
+1. Django  
+2. uWSGI  
+3. Nginx  
+4. GitHub Actions (for CI/CD pipeline)  
+5. AWS EFS (Elastic File System)  
+6. AWS EC2  
+This may further get extended by Docker and Kubernetes in future.  
+  
