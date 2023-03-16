@@ -30,6 +30,10 @@ Command to start the postgres terminal:
 ```commandline
 $ psql
 ```  
+Command to login as user "master" and to work on database "testdb":  
+```
+$ psql -d testdb -U master
+```  
 Command to create a database:  
 ```commandline
 $ create database SimpleLoginDB;
