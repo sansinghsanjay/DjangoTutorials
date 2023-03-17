@@ -118,4 +118,8 @@ This project is demonstrating the use of the following technologies for a produc
 4. uWSGI: Since web servers don't understand Python, thus uWSGI (Web Server Gateway Interface) helps them to server Python applications.  
   
 ## Docker Compose + Python Script + Postgresql (docker-compose_python-script_postgresql)  
+This project is to demonstrate the working of Docker Compose. Here, two docker containers are created to run the following:  
+1. app: "app" is a docker container (or service, in terms of Docker Compose). In this docker container, a Python script runs that hits postgresql database running in another docker container with name "db". This script builds connection with the database running in the another container, insert data and get the data stored in the database.  
+This Python script is a non-interactive script.  
+2. db: "db" is another docker container (or service, in terms of Docker container). In this container, a Postgresql database runs and listens on port 5432. For the purpose of connection, port 5432 is exposed.  
   
