@@ -110,3 +110,11 @@ Following are the technologies used in this project:
 6. AWS EC2  
 This may further get extended by Docker and Kubernetes in future.  
   
+## Django + Docker Compose + Nginx + uWSGI  
+This project is demonstrating the use of the following technologies for a production level Django project in order to make it secure, scalable, and durable:  
+1. Django: Django is a Pythong based web framework for the development of web applications. It is quite suitable to develop heavy web applications and it has been used by a number of big companies for their products.   
+2. Docker (or Docker Compose): It helps to containerize our applications so that we don't have to struggle with installation and version compatibility issues while porting and deploying our applications from the development machine to the server. Apart from this, it also makes applications secure due to their sandboxing.  
+3. Nginx: Nginx is reverse-proxy web server. It is quite popular among big companies as it is quite safe, scalable, and fast (perfect for production level applications).  
+4. uWSGI: Since web servers don't understand Python, thus uWSGI (Web Server Gateway Interface) helps them to server Python applications.  
+  
+## Docker Compose + Python Script + Postgresql  
