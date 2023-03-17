@@ -1,0 +1,10 @@
+version: "2.16"
+services:
+  db:
+    build: ./db/
+    ports:
+      - "5433:5432"
+  app:
+    build: ./app/
+    depends_on:
+      - db
