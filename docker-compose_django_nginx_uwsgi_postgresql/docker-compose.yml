@@ -1,0 +1,29 @@
+version: '2.16'
+
+services:
+  db:
+    build: ./db/
+    ports:
+      - "5433:5432"
+
+  django_app:
+    build: ./django_app/
+    volumes:
+      - static_data:/vol/web
+    environment:
+      - SECRET_KEY=samplesecret123
+      - ALLOWED_HOSTS=127.0.0.1,localhost
+    depends_on:
+      - db
+
+  proxy:
+    build: ./proxy/
+    volumes:
+      - static_data:/vol/static
+    ports:
+      - "8080:8080"
+    depends_on:
+      - django_app
+
+volumes:
+  static_data:

@@ -123,3 +123,11 @@ This project is to demonstrate the working of Docker Compose. Here, two docker c
 This Python script is a non-interactive script.  
 2. db: "db" is another docker container (or service, in terms of Docker container). In this container, a Postgresql database runs and listens on port 5432. For the purpose of connection, port 5432 is exposed.  
   
+## Docker Compose + Django + Nginx + uWSGI + Postgresql (docker-compose_django_nginx_uwsgi_postgresql)  
+In this project, following modules are running in separate docker container:  
+1. Django app & uWSGI  
+2. Nginx  
+3. Postgresql database  
+  
+All these modules are running in different docker containers (i.e., total 3 containers) and all these containers are managed by a Docker Compose file (i.e., a YML file).  
+  
