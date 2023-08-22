@@ -1,4 +1,6 @@
 # Docker Compose + Django + Nginx + uWSGI + Postgresql (docker-compose_django_nginx_uwsgi_postgresql)  
+  
+## Introduction  
 In this project, following modules are running in separate docker container:  
 1. Django app & uWSGI  
 2. Nginx  
@@ -20,6 +22,63 @@ Following is the structuring of this entire project (this structuring is done to
    1. Dockerfile: This is the dockerfile to create Docker image of the database  
    2. sql_script.sql: This is a sql file with sql queries to create database and tables  
 4. docker-compose.yml: This is the docker compose file to manage all docker images and their containers during runtime  
+  
+## Django  
+Django is a high-level Python web framework that encourages rapid development and clean pragmatic design.  
+It is free and open-source. Following are some of the key benefits of Django:  
+1. Ridiculously Fast  
+2. Reassuringly Secure  
+3. Exceedingly Scalable  
+It was created in the autumn of year 2003. It follows the Model-View-Template (MVT) architecture design.  
+  
+## Django vs Flask  
+| Attributes        | Django                                                                                                        | Flask                                                                                                             |
+|-------------------|---------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Type of Framework | Django is a full-stack web framework that enables ready to use solutions with its batteries-included apporach | Flask is a light-weight framework that gives abundant features without external libraries and minimalist features |
+| Architecture      | It follows MVT (Model-View-Template) architecture                                                             | It is a minimalistic framework that provides developers flexibility on application structuring                    |
+| Project Layout    | Django is suitable for multipage applications                                                                 | Flask is suitable for only single page applications                                                               |
+| Maturity          | Launched in 2005. It is a very matured framework with extensive community support                             | Launched in 2010, Flask is a younger framework but has a larger community                                         |
+| Database Support  | Django supports the most popular Relational Database Management Systems, like MySQL, Oracle, etc.             | Flask doesn't support the basic database management system and uses SQL Alchemy for database requirements         |  
+  
+You should use Django when:  
+- You are working on a large project  
+- You want to scale up to a more complex task later on.  
+- When you want to create web apps with ORM support, API backends, and future plans to incorporate high-end technologies like Machine Learning.  
+  
+You should use Flask when:  
+- You are working on smaller projects with coding flexibility.  
+- You need API support and want to include more extensions in the future.  
+- You want more control over your database.  
+- Flask is the best choice for creating static websites, rapid prototypes, MVPs, and RESTful web services.  
+  
+## uWSGI  
+uWSGI is an open-source software application that aims at developing a full-stack for building hosting services. It is named after Web Server Gateway Interface (WSGI).  
+WSGI (Web Server Gateway Interface) plays a vital role at the time when you deploy your Django or Flask application. WSGI is a specification that describes the communication between web servers and Python web application or frameworks. It explains how a web server communicates with python web application / framework.  
+  
+## Nginx  
+Nginx is an open-source web server, also used as a reverse proxy, HTTP cache and load balancer.  
+A reverse proxy sits in front of a web server and receives all the requests before they reach to origin server. Following is the purpose of reverse proxy:  
+- When you browse the web normally by entering a domain name or clicking a link, your browser/device connects to the website’s server directly and starts downloading its resources.  
+- If you want to anonymize your IP address from the websites you visit, then you can use a proxy server to send all your requests to it first. It’ll forward your requests to the DNS resolver and then download the website’s resources from its origin server.  
+- Afterward, it’ll pass on those resources to your device. This is called a forward proxy.  
+- You’re completely hidden from the website as it thinks your request is originating from the forward proxy.  
+- Apart from enhancing user privacy, a forward proxy is mainly used to bypass geographical content restrictions. For instance, if you want to watch a video that’s blocked in your region, you can use a forward proxy with an IP address on which the video is available to view.  
+- A forward proxy works almost the same way as a Virtual Private Network (VPN), but they’re distinct technologies with unique use cases (they can sometimes overlap though).  
+- A reverse proxy server acts as a front for the origin server to maintain anonymity and enhance security, just like how a user/client can use a forward proxy to achieve the same. It ensures that no user or client communicates directly with the origin server.  
+  
+## uWSGI and Nginx  
+As Django (and Flask) are built on Python, thus they obey WSGI specifications for communication. However, web servers like Nginx (and Apache) and browsers understand HTTP specifications (or protocol). To break this barrier between Nginx and Django / Flask, uWSGI is used in between.  
+  
+```
+                         _________        _______        __________
+            User 1 ---> |         |      |       |      |          |
+            User 2 ---> |   Web   |      |       |      | Django / |
+              :         | Server  | ---> | uWSGI | ---> |  Flask   |
+              :         | (Nginx) |      |       |      |   App    |
+            User n ---> |_________|      |_______|      |__________|
+```  
+  
+uWSGI could be used as a standalone web server in production, but that is not its inteneded use. Nginx is much more powerful than uWSGI. For starters, it is more secure. Its default security settings are already decent and they can be configured further. NGINX has better handling of static resources, which can significanlly reduce server and network load. It offers ways to cache your dynamic content and it communicates with CDNs better. It is a great load balancer.  
   
 ## How to create the project?  
 Following are the steps to create this project:  
