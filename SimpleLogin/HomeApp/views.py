@@ -36,7 +36,7 @@ def signupProcess(request):
         conn = psycopg2.connect(
             host="localhost",
             database="simplelogindb",
-            user="master",
+            user="postgres",
             password="master",
         )
         # create a database cursor
@@ -75,7 +75,7 @@ def signinProcess(request):
     conn = psycopg2.connect(
         host="localhost",
         database="simplelogindb",
-        user="master",
+        user="postgres",
         password="master",
     )
     # create a database cursor
@@ -115,7 +115,7 @@ def homeView(request):
         conn = psycopg2.connect(
             host="localhost",
             database="simplelogindb",
-            user="master",
+            user="postgres",
             password="master",
         )
         # create a database cursor

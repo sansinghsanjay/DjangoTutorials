@@ -1,5 +1,5 @@
 DB Name: simplelogindb
-User Name: master
+User Name: postgres
 User Password: master
 Table Name: table_user_login
 
